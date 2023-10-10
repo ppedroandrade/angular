@@ -17,12 +17,12 @@ export class PessoaslistComponent {
 
   constructor() {
     this.lista.push(new Pessoa('Pedro', 22));
-    this.lista.push(new Pessoa('Maria', 25));
-    this.lista.push(new Pessoa('João', 30));
+    this.lista.push(new Pessoa('Pedro', 25));
+    this.lista.push(new Pessoa('Pedro', 30));
 
     this.filteredLista$ = this.filter.valueChanges.pipe(
       startWith(''),
-      map((text) => this.filterLista(text || '')) // Provide an empty string as a default value
+      map((text) => this.filterLista(text || ''))
     );
   }
 

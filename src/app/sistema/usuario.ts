@@ -1,2 +1,1 @@
-export class Usuario {
-}
+export class Usuario {}
