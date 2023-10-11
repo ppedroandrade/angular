@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="estilo-black">
+    <button class="cadastrar-btn" (click)="openModal(abc)">Cadastrar</button>
+
+    <div class="table-container">
+      <app-tabela
+        *ngIf="list.length > 0"
+        [colunas]="['Titulo', 'Autor']"
+        [dados]="list"
+        (editarLinhaClick)="update($event, abc)"
+      ></app-tabela>
+    </div>
+  </div>
+</div>
+
+<ng-template #abc let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" *ngIf="editing">Editar Livro</h4>
+    <h4 class="modal-title" *ngIf="!editing">Criar Livro</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-livrosdetails
+      (retorno)="addToList($event)"
+      [livroInput]="livroSelecionado"
+    ></app-livrosdetails>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>

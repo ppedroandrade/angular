@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pessoa } from '../models/pessoa';
 
@@ -23,14 +23,4 @@ export class PessoaService {
   exemploErro(): Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>(this.API + '/erro');
   }
-
-  // let params = new HttpParams()
-  //     .set('empresaId', empresaId.toString())
-
-  // return this.http.get<Pessoa[]>(this.API, { params: params});
-
-  //     let headers = new HttpHeaders()
-  //     .set("Content-Type", "application/json");
-
-  //       return this.http.get<Pessoa[]>(this.API, { headers: headers});
 }

@@ -8,12 +8,13 @@ import { Usuario } from 'src/app/models/usuario';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  usuario: Usuario = new Usuario();
   roteador = inject(Router);
 
-  logar() {
-    if (this.usuario.login == 'admin' && this.usuario.senha == 'admin')
-      this.roteador.navigate(['admin/pessoas']);
-    else alert('Login ou senha incorretos!');
+  usuario: Usuario = new Usuario();
+
+  loggin() {
+    if (this.usuario.login == 'admin' && this.usuario.senha == 'admin') {
+      this.roteador.navigate(['/admin/pessoas']);
+    } else alert('Usuario ou sneha invalidos');
   }
 }
